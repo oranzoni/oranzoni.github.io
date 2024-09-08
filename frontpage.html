@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTIFY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-image: url('background1.webp');
+            background-repeat: no-repeat;
+            background-position: center 40%;
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding-top: 10vh;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+        
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 8rem;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin-bottom: 2rem;
+        }
+        
+        .start-button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.771);
+            color: rgb(22, 16, 16);
+            border: 2px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: black;
+            text-decoration-color: black;
+            display: inline-block;
+            margin-bottom: 10vh;
+        }
+        
+        .start-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .faq-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: none;
+        }
+        
+        .faq-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="faq.html" class="faq-button">?</a>
+    <div class="container">
+        <h1>BOTIFY</h1>
+        <a href="login_or_signup1.html" class="start-button">Begin your journey</a>
+    </div>
+</body>
+</html>

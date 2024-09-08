@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - BOTIFY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background1.webp');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            height: calc(70% - 150px);
+            margin-top: 80px;
+        }
+        
+        .text-content {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-y: auto;
+        }
+        
+        .video-content {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .faq-button, .home-button, .menu-button, .next-button, .finish-button {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: none;
+        }
+        
+        .faq-button, .menu-button, .next-button, .finish-button {
+            color: white;
+        }
+        
+        .home-button {
+            color: black;
+        }
+        
+        .faq-button {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .home-button {
+            top: 20px;
+            right: 20px;
+        }
+        
+        .menu-button {
+            top: 20px;
+            right: 80px;
+        }
+        
+        .next-button, .finish-button {
+            bottom: 20px;
+            width: auto;
+            padding: 0 15px;
+            border-radius: 25px;
+        }
+        
+        .next-button {
+            right: 140px;
+        }
+        
+        .finish-button {
+            right: 20px;
+        }
+        
+        .faq-button:hover, .home-button:hover, .menu-button:hover, .next-button:hover, .finish-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .completeness-meter {
+            position: absolute;
+            top: 30px;
+            right: 140px;
+            width: 300px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .completeness-bar {
+            width: 50%;
+            height: 100%;
+            background-color: #FF69B4;
+            transition: width 0.5s;
+        }
+        
+        .info-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 5px;
+            cursor: help;
+        }
+        
+        .info-icon:hover::after {
+            content: 'Further explained in the video';
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 1;
+        }
+        
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="faq.html" class="faq-button">?</a>
+        <h1>Tutorial</h1>
+        <div style="display: flex; align-items: center;">
+            <div class="completeness-meter" title="50% done">
+                <div class="completeness-bar"></div>
+            </div>
+            <a href="main_menu.html" class="menu-button">M</a>
+            <a href="frontpage.html" class="home-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="text-content">
+            <h2>ROS 2 Humble Basics</h2>
+            <p>ROS 2 Humble Hawksbill is a special software used to control robots. It's like a toolbox that helps people build robots that can do cool things, like move on their own or follow commands. With ROS 2 Humble, robots can talk to their sensors and other parts to work together better. It's used in many types of robots, from small ones to big machines. This version is also safer and faster than older ones, making it a great choice for learning how to program and control robots.</p>
+            <p>Step 1 : Install ROS 2 Humble Hawksbill. <span class="info-icon">?</span></p>
+            <p>Step 2 : Configure your ROS 2 Humble Hawksbill. <span class="info-icon">?</span></p>
+        </div>
+        <div class="video-content">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EosEikbZhiM?si=3rxFE042hvQDJAbX" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <a href="tutorial2.html" class="next-button">Next</a>
+    <a href="finished_tutorial.html" class="finish-button">Finish</a>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - BOTIFY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background1.webp');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            height: calc(100% - 120px);
+            margin-top: 60px;
+        }
+        
+        .question-content, .answer-content {
+            width: 40%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-y: auto;
+            max-height: 70vh;
+            justify-self: center;
+            align-self: center;
+        }
+        
+        .faq-button, .home-button, .menu-button, .finish-button {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .faq-button:hover, .home-button:hover, .menu-button:hover, .finish-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .faq-button {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .home-button {
+            top: 20px;
+            right: 20px;
+        }
+        
+        .menu-button {
+            top: 20px;
+            right: 80px;
+        }
+        
+        .finish-button {
+            bottom: 20px;
+            right: 20px;
+            width: auto;
+            padding: 0 15px;
+            border-radius: 25px;
+        }
+        
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+        
+        h1 {
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .question-mark {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 10px;
+            cursor: help;
+        }
+
+        .question-mark:hover::after {
+            content: 'Click for more clarification';
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown-group {
+            margin-top: 20px;
+        }
+
+        .dropdown-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .submit-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+            border: 2px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            position: static;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .question-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .question-image {
+            max-width: 60%;
+            height: auto;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="faq.html" class="faq-button">?</a>
+        <h1>Test</h1>
+        <div>
+            <a href="main_menu.html" class="menu-button">M</a>
+            <a href="frontpage.html" class="home-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="question-content">
+            <h2>Question 2</h2>
+            <div class="question-text">
+                <p>What is the purpose of an actuator in robotics? <span class="question-mark">?</span></p>
+                <img src="actuator.webp" alt="Question Image" class="question-image">
+            </div>
+        </div>
+        <div class="answer-content">
+            <h2>Complete the sentence:</h2>
+            <div class="dropdown-group">
+                <p>The function of an actuator in robotics is...</p>
+                <select name="answer" id="answer">
+                    <option value="">Select an answer</option>
+                    <option value="a">to process data</option>
+                    <option value="b">to convert energy into motion</option>
+                    <option value="c">to store information</option>
+                    <option value="d">to detect environmental changes</option>
+                </select>
+            </div>
+            <button class="submit-button" onclick="submitAnswer()">Submit</button>
+        </div>
+    </div>
+
+    <a href="finished_test.html" class="finish-button">Finish</a>
+
+    <script>
+        function submitAnswer() {
+            var select = document.getElementById('answer');
+            if (select.value !== "") {
+                window.location.href = 'finished_test.html';
+            } else {
+                alert('Please select an answer before submitting.');
+            }
+        }
+    </script>
+</body>
+</html>
