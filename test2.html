@@ -38,12 +38,27 @@
             justify-self: center;
             align-self: center;
         }
+
+	.home-button, .finish-button {
+	    position: absolute;
+            width: auto;
+            margin: auto;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            color: rgb(22, 16, 16);
+            border: 2px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: none;
+	}
         
-        .faq-button, .home-button, .menu-button, .finish-button {
+        .faq-button, .menu-button {
             position: absolute;
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.8);
             border: 2px solid white;
             border-radius: 50%;
             font-size: 1.5rem;
@@ -53,13 +68,13 @@
             align-items: center;
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             text-decoration: none;
-            color: white;
+            color: black;
         }
         
         .faq-button:hover, .home-button:hover, .menu-button:hover, .finish-button:hover {
             transform: scale(1.1);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.8);
         }
         
         .faq-button {
@@ -73,16 +88,14 @@
         }
         
         .menu-button {
-            top: 20px;
-            right: 80px;
+            top: 22px;
+            right: 155px;
         }
         
         .finish-button {
             bottom: 20px;
             right: 20px;
-            width: auto;
-            padding: 0 15px;
-            border-radius: 25px;
+            
         }
         
         .top-bar {
@@ -177,19 +190,45 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+	.completeness-meter {
+            position: absolute;
+            top: 35px;
+            right: 240px;
+            width: 300px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .completeness-bar {
+            width: 50%;
+            height: 100%;
+            background-color: #FF69B4;
+            transition: width 0.5s;
+        }
+
     </style>
 </head>
 <body>
     <div class="top-bar">
         <a href="faq.html" class="faq-button">?</a>
         <h1>Test</h1>
-        <div>
-            <a href="main_menu.html" class="menu-button">M</a>
+        <div style="display: flex; align-items: center;">
+            <div class="completeness-meter" title="100% done">
+                <div class="completeness-bar"></div>
+            </div>
+            <a href="main_menu.html" class="menu-button">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+        <circle cx="12" cy="7" r="4"></circle>
+        <path d="M5.5 21a8.38 8.38 0 0 1 13 0"></path>
+    	</svg>
+	    </a>
             <a href="frontpage.html" class="home-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                Log out
             </a>
         </div>
     </div>
@@ -208,10 +247,10 @@
                 <p>The function of an actuator in robotics is...</p>
                 <select name="answer" id="answer">
                     <option value="">Select an answer</option>
-                    <option value="a">to process data</option>
-                    <option value="b">to convert energy into motion</option>
-                    <option value="c">to store information</option>
-                    <option value="d">to detect environmental changes</option>
+                    <option value="a">To process data</option>
+                    <option value="b">To convert energy into motion</option>
+                    <option value="c">To store information</option>
+                    <option value="d">To detect environmental changes</option>
                 </select>
             </div>
             <button class="submit-button" onclick="submitAnswer()">Submit</button>
@@ -221,14 +260,23 @@
     <a href="finished_test.html" class="finish-button">Finish</a>
 
     <script>
-        function submitAnswer() {
-            var select = document.getElementById('answer');
-            if (select.value !== "") {
-                window.location.href = 'finished_test.html';
-            } else {
-                alert('Please select an answer before submitting.');
-            }
+    // Updated script to handle dropdown submission
+    function submitAnswer() {
+        var select = document.getElementById('answer');
+        var selectedValue = select.value;
+
+        if (selectedValue === "") {
+            // If no option is selected
+            alert("Please choose an option.");
+        } else if (selectedValue === "b") {
+            // Correct answer, navigate to the correct answer page
+            window.location.href = 'test2_correct_answer.html';
+        } else {
+            // Incorrect answer, navigate to the incorrect answer page
+            window.location.href = 'test2_incorrect_answer.html';
         }
+    }
     </script>
+
 </body>
 </html>

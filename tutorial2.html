@@ -43,15 +43,15 @@
             align-items: center;
         }
         
-        .faq-button, .home-button, .menu-button, .previous-button, .finish-button {
+        .faq-button, .menu-button {
             position: absolute;
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            background: rgba(255, 255, 255, 0.8);
             border: 2px solid white;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+	    color: black;
             cursor: pointer;
             display: flex;
             justify-content: center;
@@ -59,6 +59,21 @@
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             text-decoration: none;
         }
+        
+        .home-button, .previous-button, .finish-button {
+	    position: absolute;
+            width: auto;
+            margin: auto;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            color: rgb(22, 16, 16);
+            border: 2px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: none;
+	}
         
         .faq-button {
             top: 20px;
@@ -71,35 +86,32 @@
         }
         
         .menu-button {
-            top: 20px;
-            right: 80px;
+            top: 22px;
+            right: 155px;
         }
         
         .previous-button, .finish-button {
             bottom: 20px;
-            width: 100px;
-            border-radius: 25px;
-            color: white;
         }
         
         .previous-button {
-            right: 140px;
+            right: 150px;
         }
         
         .finish-button {
             right: 20px;
         }
         
-        .faq-button:hover, .home-button:hover, .menu-button:hover, .previous-button:hover, .finish-button:hover {
+        .faq-button:hover, .home-button:hover, .menu-button:hover, .next-button:hover, .finish-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255,255,255,0.5);
-            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.8);
         }
         
         .completeness-meter {
             position: absolute;
-            top: 30px;
-            right: 140px;
+            top: 35px;
+            right: 240px;
             width: 300px;
             height: 30px;
             background-color: #ddd;
@@ -110,7 +122,7 @@
         }
         
         .completeness-bar {
-            width: 100%;
+            width: 50%;
             height: 100%;
             background-color: #FF69B4;
             transition: width 0.5s;
@@ -168,19 +180,19 @@
         <a href="faq.html" class="faq-button">?</a>
         <h1>Tutorial</h1>
         <div style="display: flex; align-items: center;">
-            <div class="completeness-meter" title="100% done">
+            <div class="completeness-meter" title="50% done">
                 <div class="completeness-bar"></div>
             </div>
-            <a href="main_menu.html" class="menu-button">M</a>
+            <a href="main_menu.html" class="menu-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+        <circle cx="12" cy="7" r="4"></circle>
+        <path d="M5.5 21a8.38 8.38 0 0 1 13 0"></path>
+    	</svg>
+	</a>
             <a href="frontpage.html" class="home-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                Log out
             </a>
         </div>
-    </div>
-    
+    </div>    
     <div class="container">
         <div class="text-content">
             <h2>ROS 2 Humble Advanced Topics</h2>
